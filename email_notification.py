@@ -24,8 +24,7 @@ def send_email_notification(user_id, model_name, graph_type):
     subject = "You're All Set - Your NMA Graph is ready!"
     body_html = (
         f"<h2>Hey, Deep Thinker!</h2>"
-        f"<p>Great news! The {graph_type} graph process for the model {model_name} is now complete, and you can officially log in to the system and start exploring.<br>We're excited to have you on board and expose you to BETTER model explanations.</p>"
-        f"<p>Welcome aboard!</p>"
+        f"<p>Great news! The {graph_type} graph process for the model {model_name} is now complete, and you can log in to the system and start exploring.<br>We're excited to have you on board and expose you to BETTER model explanations.</p>"
         f"<p>Best regards,<br>BETTER Team</p>"
         f"<p><strong>Note:</strong> This is an automated message. Please do not reply to this email.</p>"
     )
@@ -33,7 +32,7 @@ def send_email_notification(user_id, model_name, graph_type):
     message = {"Subject": {"Data": subject}, "Body": {"Html": {"Data": body_html}}}
     try:
         response = ses_client.send_email(
-            Source="betterxai2025@gmail.com",
+            Source="noreply@better-xai.com",
             Destination={"ToAddresses": [email]},
             Message=message
         )
