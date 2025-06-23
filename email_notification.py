@@ -21,11 +21,11 @@ def send_email_notification(user_id, model_name, graph_type):
         print("Error fetching user email:", e.response['Error']['Message'])
         return
     
-    subject = "You're All Set - Your NMA Graph is ready!"
+    subject = "Graph Creation Failed - Action Needed"
     body_html = (
         f"<h2>Hey, Deep Thinker!</h2>"
-        f"<p>Great news! The {graph_type} graph process for the model {model_name} is now complete, and you can log in to the system and start exploring.<br>We're excited to have you on board and expose you to BETTER model explanations.</p>"
-        f"<p>Best regards,<br>BETTER Team</p>"
+        f"<p>We wanted to let you know that your recent request to build a {graph_type} graph process for the model {model_name} did not complete successfully.<br>Unfortunately, an error occurred during the process, and the graph couldn't be generated. We're sorry for the inconvenience.</p>"
+        f"<p>You can try submitting the request again, We're here to help and appreciate your patience.<br>BETTER Team</p>"
         f"<p><strong>Note:</strong> This is an automated message. Please do not reply to this email.</p>"
     )
     
